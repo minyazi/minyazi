@@ -1,25 +1,22 @@
 package com.minyaziutils;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
 
 /**
- * 日期工具测试类<br>
+ * 日期工具类Test<br>
  * 
  * @author minyazi
  */
 public class DateUtilTest {
 	
-	private static final Logger logger = Utility.getLogger(DateUtilTest.class.getName());
-	
 	@Test
 	public void testGetDate() {
-		logger.info(DateUtil.getDate());
+		Utility.infoLog(DateUtil.getDate());
 	}
 	
 	@Test
 	public void testGetISODate() {
-		logger.info(DateUtil.getISODate());
+		Utility.infoLog(DateUtil.getISODate());
 	}
 	
 }
