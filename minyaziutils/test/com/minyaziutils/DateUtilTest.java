@@ -11,12 +11,12 @@ public class DateUtilTest {
 	
 	@Test
 	public void testGetDate() {
-		Utility.infoLog(DateUtil.getDate());
+		LogUtil.info(DateUtil.getDate());
 	}
 	
 	@Test
 	public void testGetISODate() {
-		Utility.infoLog(DateUtil.getISODate());
+		LogUtil.info(DateUtil.getISODate());
 	}
 	
 }
