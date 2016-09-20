@@ -19,4 +19,14 @@ public class DateUtilTest {
 		LogUtil.info(DateUtil.getISODate());
 	}
 	
+	@Test
+	public void testGetSpecifiedDay() {
+		LogUtil.info(DateUtil.getSpecifiedDay("2016-01-01", 1));
+	}
+	
+	@Test
+	public void testGetAge() {
+		LogUtil.info(DateUtil.getAge("1990-01-01"));
+	}
+	
 }

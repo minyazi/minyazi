@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class LogUtil {
 	
-	private static final Logger LOGGER = LogUtil.getLogger(LogUtil.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(LogUtil.class.getName());
 	
 	/**
 	 * 用给定的名称构造日志记录器<br>
@@ -35,7 +35,7 @@ public class LogUtil {
 	 * 
 	 * @param message 日志
 	 */
-	public static void debug(String message) {
+	public static void debug(Object message) {
 		LOGGER.debug(message);
 	}
 	
@@ -44,7 +44,7 @@ public class LogUtil {
 	 * 
 	 * @param message 日志
 	 */
-	public static void info(String message) {
+	public static void info(Object message) {
 		LOGGER.info(message);
 	}
 	
@@ -53,7 +53,7 @@ public class LogUtil {
 	 * 
 	 * @param message 日志
 	 */
-	public static void error(String message) {
+	public static void error(Object message) {
 		LOGGER.error(message);
 	}
 	
