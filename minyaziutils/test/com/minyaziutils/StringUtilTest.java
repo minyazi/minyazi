@@ -14,4 +14,9 @@ public class StringUtilTest {
 		LogUtil.info(StringUtil.getUUID());
 	}
 	
+	@Test
+	public void testFill() {
+		LogUtil.info(StringUtil.fill("1", "3", 5));
+	}
+	
 }
