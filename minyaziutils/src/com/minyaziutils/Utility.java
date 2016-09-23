@@ -97,11 +97,11 @@ public class Utility {
 			
 			return result;
 		} catch (IOException e) {
-			PlatformException pe = new PlatformException("命令执行出错", e);
+			PlatformException pe = new PlatformException("命令执行出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		} catch (InterruptedException e) {
-			PlatformException pe = new PlatformException("命令执行出错", e);
+			PlatformException pe = new PlatformException("命令执行出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}

@@ -37,11 +37,11 @@ public class FileUtil {
 			out.close();
 			in.close();
 		} catch (FileNotFoundException e) {
-			PlatformException pe = new PlatformException("保存文件出错", e);
+			PlatformException pe = new PlatformException("保存文件出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		} catch (IOException e) {
-			PlatformException pe = new PlatformException("保存文件出错", e);
+			PlatformException pe = new PlatformException("保存文件出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -100,15 +100,15 @@ public class FileUtil {
 		    reader.close();
 		    return fileContent.toString();
 		} catch (FileNotFoundException e) {
-			PlatformException pe = new PlatformException("读取文件内容出错", e);
+			PlatformException pe = new PlatformException("读取文件内容出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		} catch (UnsupportedEncodingException e) {
-			PlatformException pe = new PlatformException("读取文件内容出错", e);
+			PlatformException pe = new PlatformException("读取文件内容出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		} catch (IOException e) {
-			PlatformException pe = new PlatformException("读取文件内容出错", e);
+			PlatformException pe = new PlatformException("读取文件内容出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}

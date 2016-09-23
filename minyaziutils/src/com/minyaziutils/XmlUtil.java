@@ -34,7 +34,7 @@ public class XmlUtil {
 			SAXReader reader = new SAXReader();
 			return reader.read(new StringReader(xmlString));
 		} catch (DocumentException e) {
-			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			PlatformException pe = new PlatformException("XML解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -85,11 +85,11 @@ public class XmlUtil {
 				return true;
 			}
 		} catch (ParserConfigurationException e) {
-			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			PlatformException pe = new PlatformException("XML合法性验证出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		} catch (SAXException e) {
-			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			PlatformException pe = new PlatformException("XML合法性验证出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -108,7 +108,7 @@ public class XmlUtil {
 			Document xmlDocument = reader.read(xmlFile);
 			return validateXmlBySchema(xmlDocument, xsdFilename);
 		} catch (DocumentException e) {
-			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			PlatformException pe = new PlatformException("XML合法性验证出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -127,7 +127,7 @@ public class XmlUtil {
 			Document xmlDocument = reader.read(new StringReader(xmlString));
 			return validateXmlBySchema(xmlDocument, xsdFilename);
 		} catch (DocumentException e) {
-			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			PlatformException pe = new PlatformException("XML合法性验证出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}

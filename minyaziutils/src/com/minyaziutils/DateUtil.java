@@ -148,7 +148,7 @@ public class DateUtil {
 			c.add(Calendar.DAY_OF_MONTH, amount);
 			return sdf.format(c.getTime());
 		} catch (ParseException e) {
-			PlatformException pe = new PlatformException("日期解析出错", e);
+			PlatformException pe = new PlatformException("日期解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -170,7 +170,7 @@ public class DateUtil {
 			c.add(field, amount);
 			return sdf.format(c.getTime());
 		} catch (ParseException e) {
-			PlatformException pe = new PlatformException("日期解析出错", e);
+			PlatformException pe = new PlatformException("日期解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -214,7 +214,7 @@ public class DateUtil {
 				return false; // 非节假日
 			}
 		} catch (ParseException e) {
-			PlatformException pe = new PlatformException("日期解析出错", e);
+			PlatformException pe = new PlatformException("日期解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -276,7 +276,7 @@ public class DateUtil {
 			}
 			return week;
 		} catch (ParseException e) {
-			PlatformException pe = new PlatformException("日期解析出错", e);
+			PlatformException pe = new PlatformException("日期解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
@@ -296,7 +296,7 @@ public class DateUtil {
 			sdf = getSimpleDateFormat("yyyy");
 			return Integer.parseInt(sdf.format(new Date())) - Integer.parseInt(sdf.format(c.getTime()));
 		} catch (ParseException e) {
-			PlatformException pe = new PlatformException("日期解析出错", e);
+			PlatformException pe = new PlatformException("日期解析出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
 			throw pe;
 		}
