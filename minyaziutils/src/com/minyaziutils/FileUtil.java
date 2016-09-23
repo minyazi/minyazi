@@ -77,7 +77,7 @@ public class FileUtil {
 				return "";
 			}
 			BufferedReader reader = null;
-			if (StringUtil.formatNullString(encoding).trim().equals("")) {
+			if (StringUtil.isEmptyString(encoding)) {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 			} else {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), encoding));
@@ -112,6 +112,21 @@ public class FileUtil {
 			LogUtil.exception(pe);
 			throw pe;
 		}
+	}
+	
+	/**
+	 * 读取文件内容<br>
+	 * 
+	 * @param filePath 要读取的文件所在路径
+	 * @param filename 要读取的文件的文件名
+	 * @param encoding 字符编码
+	 * @param isHTML 是否以HTML的格式读取文件内容（true：是，false：否）
+	 * @return 返回读取的文件内容。
+	 */
+	public static String readFile(String filePath, String filename, String encoding, boolean isHTML) {
+		String path = filePath + "/" + filename;
+		File file = new File(path);
+		return readFile(file, encoding, isHTML);
 	}
 	
 }

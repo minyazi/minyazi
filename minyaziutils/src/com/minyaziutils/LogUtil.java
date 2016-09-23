@@ -19,7 +19,7 @@ public class LogUtil {
 	 */
 	public static Logger getLogger(String name) {
 		debug("日志记录器名称：" + name);
-		if (StringUtil.formatNullString(name).trim().equals("")) {
+		if (StringUtil.isEmptyString(name)) {
 			return LOGGER;
 		} else {
 			// Apache log4j 1.2.17

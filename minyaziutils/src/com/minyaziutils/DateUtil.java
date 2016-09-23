@@ -23,7 +23,7 @@ public class DateUtil {
 	 */
 	public static SimpleDateFormat getSimpleDateFormat(String pattern) {
 		LogUtil.debug("日期模式：" + pattern);
-		if (StringUtil.formatNullString(pattern).trim().equals("")) {
+		if (StringUtil.isEmptyString(pattern)) {
 			return new SimpleDateFormat(DEFAULT_PATTERN, Locale.ENGLISH);
 		} else {
 			return new SimpleDateFormat(pattern, Locale.ENGLISH);
@@ -120,7 +120,7 @@ public class DateUtil {
 	 */
 	public static SimpleDateFormat getSimpleDateFormatByDate(String date) {
 		String pattern = "";
-		if (!StringUtil.formatNullString(date).trim().equals("")) {
+		if (!StringUtil.isEmptyString(date)) {
 			if (date.indexOf("/") != -1) {
 				pattern = "yyyy/MM/dd";
 			} else if (date.indexOf("-") != -1) {

@@ -44,7 +44,7 @@ public class StringUtil {
 	 * @return 如果String等于null，则返回空字符串，否则返回String本身。
 	 */
 	public static String formatNullString(String value) {
-		LogUtil.debug("String：" + value);
+//		LogUtil.debug("String：" + value);
 		return value == null ? "" : value;
 	}
 	
@@ -55,8 +55,18 @@ public class StringUtil {
 	 * @return 如果Amount等于null或空字符串，则返回null，否则返回Amount本身。
 	 */
 	public static String formatNullAmount(String value) {
-		LogUtil.debug("Amount：" + value);
+//		LogUtil.debug("Amount：" + value);
 		return (value == null || value.trim().equals("")) ? null : value;
+	}
+	
+	/**
+	 * 验证是否是空字符串<br>
+	 * 
+	 * @param value 要验证的String
+	 * @return 如果String等于null或空字符串，则返回true，否则返回false。
+	 */
+	public static boolean isEmptyString(String value) {
+		return formatNullString(value).trim().equals("");
 	}
 	
 	/**
@@ -70,7 +80,7 @@ public class StringUtil {
 	public static String fill(String value, String fillType, Integer fillLength) {
 		value = formatNullString(value);
 		int valueLength = value.length();
-		if (formatNullString(fillType).trim().equals("")){
+		if (isEmptyString(fillType)){
 			fillType = "0";
 		}
 		if ("01234".indexOf(fillType) == -1) {

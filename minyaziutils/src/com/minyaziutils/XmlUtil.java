@@ -24,6 +24,23 @@ import org.xml.sax.SAXException;
 public class XmlUtil {
 	
 	/**
+	 * 构造XML文件的Document对象<br>
+	 * 
+	 * @param xmlString 要解析的XML文件
+	 * @return 返回XML文件的Document对象。
+	 */
+	public static Document getXmlDocument(String xmlString) {
+		try {
+			SAXReader reader = new SAXReader();
+			return reader.read(new StringReader(xmlString));
+		} catch (DocumentException e) {
+			PlatformException pe = new PlatformException("XML合法性验证出错", e);
+			LogUtil.exception(pe);
+			throw pe;
+		}
+	}
+	
+	/**
 	 * 使用Schema验证XML的合法性<br>
 	 * 
 	 * @param xmlDocument 要验证的XML文件

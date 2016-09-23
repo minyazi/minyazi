@@ -15,6 +15,15 @@ import java.util.TreeSet;
 public class Utility {
 	
 	/**
+	 * 获取系统的classpath路径<br>
+	 * 
+	 * @return 返回系统的classpath路径。
+	 */
+	public static String getClassPath() {
+		return Utility.class.getResource("/").getPath();
+	}
+	
+	/**
 	 * 根据元素的自然顺序对指定迭代器按升序进行排序<br>
 	 * 
 	 * @param <E> 元素类型
