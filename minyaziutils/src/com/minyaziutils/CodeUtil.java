@@ -24,9 +24,7 @@ public class CodeUtil {
 	 */
 	public static Map<String, Map<String, String>> getCodes() {
 		if (codes == null) {
-			PlatformException pe = new PlatformException("代码还未初始化");
-			LogUtil.exception(pe);
-			throw pe;
+			init();
 		}
 		return codes;
 	}
@@ -45,6 +43,10 @@ public class CodeUtil {
 	 */
 	@SuppressWarnings("unchecked")
 	public static void init(String codeConfigFilename) {
+		if (codes != null) {
+			return;
+		}
+		
 		codes = new LinkedHashMap<String, Map<String, String>>();
 		
 		// 从代码配置文件中解析出代码
@@ -118,9 +120,7 @@ public class CodeUtil {
 	 */
 	public static Map<String, String> getCodeItems(String name) {
 		if (codes == null) {
-			PlatformException pe = new PlatformException("代码还未初始化");
-			LogUtil.exception(pe);
-			throw pe;
+			init();
 		}
 		if (codes.get(name) == null) {
 			return new LinkedHashMap<String, String>();
@@ -138,9 +138,7 @@ public class CodeUtil {
 	 */
 	public static String getCodeItemValue(String name, String itemKey) {
 		if (codes == null) {
-			PlatformException pe = new PlatformException("代码还未初始化");
-			LogUtil.exception(pe);
-			throw pe;
+			init();
 		}
 		Map<String, String> items = getCodeItems(name);
 		if (items != null && items.get(itemKey) != null) {
