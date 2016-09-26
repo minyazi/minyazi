@@ -1,8 +1,10 @@
-package com.minyaziutils.filterutil;
+package com.minyaziutils.test;
 
 import org.junit.Test;
 
 import com.minyaziutils.LogUtil;
+import com.minyaziutils.filterutil.StringFilter;
+import com.minyaziutils.filterutil.StringFilterFactory;
 
 public class StringFilterFactoryTest {
 	

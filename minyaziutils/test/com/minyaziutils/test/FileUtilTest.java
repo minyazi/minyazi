@@ -1,6 +1,10 @@
-package com.minyaziutils;
+package com.minyaziutils.test;
 
 import org.junit.Test;
+
+import com.minyaziutils.FileUtil;
+import com.minyaziutils.LogUtil;
+import com.minyaziutils.Utility;
 
 /**
  * 文件工具类Test<br>

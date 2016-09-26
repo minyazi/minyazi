@@ -1,6 +1,9 @@
-package com.minyaziutils;
+package com.minyaziutils.test;
 
 import org.junit.Test;
+
+import com.minyaziutils.DateUtil;
+import com.minyaziutils.LogUtil;
 
 /**
  * 日期工具类Test<br>

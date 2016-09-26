@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.minyaziutils.filterutil.StringFilterFactory;
+
 /**
  * 工具类<br>
  * 
@@ -57,12 +59,7 @@ public class Utility {
 			while ((strI = brI.readLine()) != null) {
 				LogUtil.debug("进程输出信息：" + strI);
 				if (isHTML) {
-					strI = strI.replaceAll("\\t", "    ")
-							   .replaceAll("&", "&amp;")
-							   .replaceAll(" ", "&nbsp;")
-							   .replaceAll("<", "&lt;")
-							   .replaceAll(">", "&gt;")
-							   .replaceAll("\"", "&quot;");
+					strI = StringFilterFactory.getInstance().getStringFilterChain("html").filter(strI);
 					resultI.append(strI).append("<br>");
 				} else {
 					resultI.append(strI).append("\r\n");
@@ -76,12 +73,7 @@ public class Utility {
 			while ((strE = brE.readLine()) != null) {
 				LogUtil.debug("进程错误信息：" + strE);
 				if (isHTML) {
-					strE = strE.replaceAll("\\t", "    ")
-							   .replaceAll("&", "&amp;")
-							   .replaceAll(" ", "&nbsp;")
-							   .replaceAll("<", "&lt;")
-							   .replaceAll(">", "&gt;")
-							   .replaceAll("\"", "&quot;");
+					strE = StringFilterFactory.getInstance().getStringFilterChain("html").filter(strE);
 					resultE.append(strE).append("<br>");
 				} else {
 					resultE.append(strE).append("\r\n");

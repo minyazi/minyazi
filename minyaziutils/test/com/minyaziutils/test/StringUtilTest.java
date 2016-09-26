@@ -1,6 +1,9 @@
-package com.minyaziutils;
+package com.minyaziutils.test;
 
 import org.junit.Test;
+
+import com.minyaziutils.LogUtil;
+import com.minyaziutils.StringUtil;
 
 /**
  * 字符串工具类Test<br>
