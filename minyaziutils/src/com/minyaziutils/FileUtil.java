@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import com.minyaziutils.filterutil.StringFilterFactory;
+
 /**
  * 文件工具类<br>
  * 
@@ -86,12 +88,7 @@ public class FileUtil {
 		    String buffer = null;
 		    while ((buffer = reader.readLine()) != null) {
 		    	if (isHTML) {
-		    		buffer = buffer.replaceAll("\\t", "    ")
-		    					   .replaceAll("&", "&amp;")
-		    					   .replaceAll(" ", "&nbsp;")
-		    					   .replaceAll("<", "&lt;")
-		    					   .replaceAll(">", "&gt;")
-		    					   .replaceAll("\"", "&quot;");
+		    		buffer = StringFilterFactory.getInstance().getStringFilterChain("html").filter(buffer);
 		    		fileContent.append(buffer).append("<br>");
 		    	} else {
 		    		fileContent.append(buffer).append("\r\n");
