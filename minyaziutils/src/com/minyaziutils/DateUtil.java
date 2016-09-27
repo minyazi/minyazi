@@ -108,7 +108,7 @@ public class DateUtil {
      * @param pattern 日期模式
      * @return 返回指定日期模式的日期。
      */
-    public static String getspecifiedDate(String pattern) {
+    public static String getSpecifiedDate(String pattern) {
     	return getSimpleDateFormat(pattern).format(new Date());
     }
     
