@@ -58,6 +58,9 @@ public class FileUtil {
 	public static void deleteFile(String filePath, String filename) {
 		String path = filePath + "/" + filename;
 		File file = new File(path);
+		if (!file.exists()) {
+			return;
+		}
 		if (!file.delete()) {
 			PlatformException pe = new PlatformException("删除文件出错");
 			LogUtil.exception(pe);
