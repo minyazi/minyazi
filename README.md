@@ -1,6 +1,10 @@
 # minyaziutils
 敏伢子的工具类库
 
+##V1.2版本变更说明（2016/09/28)
+* 增加Excel工具类（ExcelUtil），提供针对Excel文件操作的常用方法，需要依赖apache-poi-3.10.1类库。
+* 增加JDBC工具类（JdbcUtil），提供针对JDBC操作的常用方法，需要依赖c3p0-0.9.5.1、apache-commons-dbutils-1.6和mysql-driver-5.1.39类库。
+
 ##V1.1版本变更说明（2016/09/26)
 * 增加代码工具类（CodeUtil），用于从代码配置文件中获取代码。
 * 增加字符过滤器（StringFilter），用于实现字符串过滤。
