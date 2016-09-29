@@ -11,6 +11,26 @@ import java.util.UUID;
 public class StringUtil {
 	
 	/**
+	 * 转换为小写字符串<br>
+	 * 
+	 * @param value 要转换的字符串
+	 * @return 返回转换为小写的字符串。
+	 */
+	public static String toLowerCase(String value) {
+		return value == null ? null : value.toLowerCase(Locale.ENGLISH);
+	}
+	
+	/**
+	 * 转换为大写字符串<br>
+	 * 
+	 * @param value 要转换的字符串
+	 * @return 返回转换为大写的字符串。
+	 */
+	public static String toUpperCase(String value) {
+		return value == null ? null : value.toUpperCase(Locale.ENGLISH);
+	}
+	
+	/**
 	 * 获取一个UUID<br>
 	 * 
 	 * @return 返回一个UUID。
@@ -25,7 +45,7 @@ public class StringUtil {
 	 * @return 返回一个转换为小写的UUID。
 	 */
 	public static String getLowerUUID() {
-        return getUUID().toLowerCase(Locale.ENGLISH);
+        return toLowerCase(getUUID());
     }
 	
 	/**
@@ -34,7 +54,7 @@ public class StringUtil {
 	 * @return 返回一个转换为大写的UUID。
 	 */
 	public static String getUpperUUID() {
-        return getUUID().toUpperCase(Locale.ENGLISH);
+        return toUpperCase(getUUID());
     }
 	
 	/**

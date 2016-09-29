@@ -50,7 +50,7 @@ public class CodeUtil {
 		codes = new LinkedHashMap<String, Map<String, String>>();
 		
 		// 从代码配置文件中解析出代码
-		String xmlString = FileUtil.readFile(Utility.getClassPath(), codeConfigFilename, "UTF-8", false);
+		String xmlString = FileUtil.readFile(Utility.getClassPath(), codeConfigFilename, "UTF-8", false, true);
 		Document xmlDocument = XmlUtil.getXmlDocument(xmlString);
 		Element rootElement = xmlDocument.getRootElement();
 		

@@ -74,9 +74,10 @@ public class FileUtil {
 	 * @param file 要读取的文件
 	 * @param encoding 字符编码
 	 * @param isHTML 是否以HTML的格式读取文件内容（true：是，false：否）
+	 * @param addCRLF 行尾是否添加回车换行符（true：是，false：否）
 	 * @return 返回读取的文件内容。
 	 */
-	public static String readFile(File file, String encoding, boolean isHTML) {
+	public static String readFile(File file, String encoding, boolean isHTML, boolean addCRLF) {
 		try {
 			if (!file.exists()) {
 				return "";
@@ -92,9 +93,15 @@ public class FileUtil {
 		    while ((buffer = reader.readLine()) != null) {
 		    	if (isHTML) {
 		    		buffer = StringFilterFactory.getInstance().getStringFilterChain("html").filter(buffer);
-		    		fileContent.append(buffer).append("<br>");
+		    		fileContent.append(buffer);
+		    		if (addCRLF) {
+		    			fileContent.append("<br>");
+		    		}
 		    	} else {
-		    		fileContent.append(buffer).append("\r\n");
+		    		fileContent.append(buffer);
+		    		if (addCRLF) {
+		    			fileContent.append("\r\n");
+		    		}
 		    	}
 		    }
 		    reader.close();
@@ -121,12 +128,13 @@ public class FileUtil {
 	 * @param filename 要读取的文件的文件名
 	 * @param encoding 字符编码
 	 * @param isHTML 是否以HTML的格式读取文件内容（true：是，false：否）
+	 * @param addCRLF 行尾是否添加回车换行符（true：是，false：否）
 	 * @return 返回读取的文件内容。
 	 */
-	public static String readFile(String filePath, String filename, String encoding, boolean isHTML) {
+	public static String readFile(String filePath, String filename, String encoding, boolean isHTML, boolean addCRLF) {
 		String path = filePath + "/" + filename;
 		File file = new File(path);
-		return readFile(file, encoding, isHTML);
+		return readFile(file, encoding, isHTML, addCRLF);
 	}
 	
 }
