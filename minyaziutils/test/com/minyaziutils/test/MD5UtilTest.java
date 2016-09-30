@@ -14,6 +14,7 @@ public class MD5UtilTest {
 	
 	@Test
 	public void test() {
+		LogUtil.info("MD5加密文件：" + MD5Util.encodeFile("D:/SFTP", "README.md"));
 		LogUtil.info(MD5Util.getMD5Bytes("test"));
 		LogUtil.info("32位小写：" + MD5Util.get32LowerMD5("test"));
 		LogUtil.info("32位大写：" + MD5Util.get32UpperMD5("test"));

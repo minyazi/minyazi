@@ -1,8 +1,14 @@
 package com.minyaziutils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * MD5工具类<br>
@@ -10,6 +16,50 @@ import java.security.NoSuchAlgorithmException;
  * @author minyazi
  */
 public class MD5Util {
+	
+	/**
+	 * 使用MD5加密字符串<br>
+	 * 
+	 * @param value 要加密的字符串
+	 * @return 返回加密后的结果。
+	 */
+	public static String encodeString(String value) {
+		return DigestUtils.md5Hex(value);
+	}
+	
+	/**
+	 * 使用MD5加密文件<br>
+	 * 
+	 * @param file 要加密的文件
+	 * @return 返回加密后的结果。
+	 */
+	public static String encodeFile(File file) {
+		try {
+			FileInputStream fis = new FileInputStream(file);
+			return DigestUtils.md5Hex(fis);
+		} catch (FileNotFoundException e) {
+			PlatformException pe = new PlatformException("MD5加密文件出错：" + e.getMessage(), e);
+			LogUtil.exception(pe);
+			throw pe;
+		} catch (IOException e) {
+			PlatformException pe = new PlatformException("MD5加密文件出错：" + e.getMessage(), e);
+			LogUtil.exception(pe);
+			throw pe;
+		}
+	}
+	
+	/**
+	 * 使用MD5加密文件<br>
+	 * 
+	 * @param filePath 要加密的文件所在路径
+	 * @param filename 要加密的文件的文件名
+	 * @return 返回加密后的结果。
+	 */
+	public static String encodeFile(String filePath, String filename) {
+		String path = filePath + "/" + filename;
+		File file = new File(path);
+		return encodeFile(file);
+	}
 	
 	/**
 	 * MD5加密<br>
@@ -119,15 +169,7 @@ public class MD5Util {
 	 */
 	public static byte[] getMD5Bytes(String message, String encoding) {
 		try {
-			// 获取MD5加密算法的信息摘要
-			MessageDigest md5 = MessageDigest.getInstance("MD5");
-			// 添加要加密的信息
-			md5.update(message.getBytes(encoding));
-			return md5.digest();
-		} catch (NoSuchAlgorithmException e) {
-			PlatformException pe = new PlatformException("MD5加密出错：" + e.getMessage(), e);
-			LogUtil.exception(pe);
-			throw pe;
+			return DigestUtils.md5(message.getBytes(encoding));
 		} catch (UnsupportedEncodingException e) {
 			PlatformException pe = new PlatformException("MD5加密出错：" + e.getMessage(), e);
 			LogUtil.exception(pe);
@@ -143,17 +185,13 @@ public class MD5Util {
 	 * @return 返回32位小写的MD5加密串。
 	 */
 	public static String get32LowerMD5(String message, String encoding) {
-		byte[] md5Bytes = getMD5Bytes(message, encoding);
-		StringBuilder result = new StringBuilder(500);
-		for (byte md5Byte : md5Bytes) {
-			String value = Integer.toHexString(0xff & md5Byte);
-			if (value.length() == 1) {
-				result.append("0" + value);
-			} else {
-				result.append(value);
-			}
+		try {
+			return DigestUtils.md5Hex(message.getBytes(encoding));
+		} catch (UnsupportedEncodingException e) {
+			PlatformException pe = new PlatformException("MD5加密出错：" + e.getMessage(), e);
+			LogUtil.exception(pe);
+			throw pe;
 		}
-		return result.toString();
 	}
 	
 	/**
