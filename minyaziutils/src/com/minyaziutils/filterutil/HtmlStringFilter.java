@@ -7,6 +7,10 @@ package com.minyaziutils.filterutil;
  */
 public class HtmlStringFilter extends AbstractStringFilter {
 	
+	public HtmlStringFilter() {
+		
+	}
+	
 	@Override
 	public String doFilter(String value) {
 		if (value == null) {

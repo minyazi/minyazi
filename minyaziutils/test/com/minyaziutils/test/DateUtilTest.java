@@ -12,6 +12,10 @@ import com.minyaziutils.LogUtil;
  */
 public class DateUtilTest {
 	
+	public DateUtilTest() {
+		
+	}
+	
 	@Test
 	public void testGetDate() {
 		LogUtil.info(DateUtil.getDate());

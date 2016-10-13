@@ -8,6 +8,10 @@ import com.minyaziutils.filterutil.StringFilterFactory;
 
 public class StringFilterFactoryTest {
 	
+	public StringFilterFactoryTest() {
+		
+	}
+	
 	@Test
 	public void test() {
 		String chain = "html,upper";

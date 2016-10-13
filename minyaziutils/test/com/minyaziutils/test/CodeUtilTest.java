@@ -11,6 +11,10 @@ import com.minyaziutils.LogUtil;
  * @author minyazi
  */
 public class CodeUtilTest {
+	
+	public CodeUtilTest() {
+		
+	}
 
 	@Test
 	public void testInit() {

@@ -12,6 +12,10 @@ import com.minyaziutils.MD5Util;
  */
 public class MD5UtilTest {
 	
+	public MD5UtilTest() {
+		
+	}
+	
 	@Test
 	public void test() {
 		LogUtil.info("MD5加密文件：" + MD5Util.encodeFile("D:/SFTP", "README.md"));

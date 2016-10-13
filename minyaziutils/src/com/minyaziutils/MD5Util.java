@@ -17,6 +17,10 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 public class MD5Util {
 	
+	private MD5Util() {
+		
+	}
+	
 	/**
 	 * 使用MD5加密字符串<br>
 	 * 

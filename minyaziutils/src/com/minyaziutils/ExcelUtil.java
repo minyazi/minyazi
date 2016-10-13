@@ -26,6 +26,10 @@ public class ExcelUtil {
 	private HSSFWorkbook workbook = null; // 工作薄
 	private HSSFSheet sheet = null; // 工作表
 	
+	public ExcelUtil() {
+		
+	}
+	
 	public HSSFWorkbook getWorkbook() {
 		return workbook;
 	}

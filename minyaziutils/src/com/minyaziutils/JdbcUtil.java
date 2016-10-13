@@ -26,6 +26,10 @@ public class JdbcUtil {
 	private static QueryRunner qr_conn;
 	private static String ds_name = "testdb"; // 数据源名称
 	
+	private JdbcUtil() {
+		
+	}
+	
 	/**
 	 * 初始化数据库连接池<br>
 	 */

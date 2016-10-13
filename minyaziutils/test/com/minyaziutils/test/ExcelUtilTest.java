@@ -12,6 +12,10 @@ import com.minyaziutils.StringUtil;
  */
 public class ExcelUtilTest {
 	
+	public ExcelUtilTest() {
+		
+	}
+	
 	@Test
 	public void testCreateExcel() {
 		ExcelUtil excel = new ExcelUtil();

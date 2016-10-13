@@ -17,6 +17,10 @@ public class CodeUtil {
 	
 	private static Map<String, Map<String, String>> codes; // 代码列表
 	
+	private CodeUtil() {
+		
+	}
+	
 	/**
 	 * 获取全部代码的代码列表<br>
 	 * 

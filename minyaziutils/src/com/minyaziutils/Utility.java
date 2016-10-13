@@ -16,6 +16,10 @@ import com.minyaziutils.filterutil.StringFilterFactory;
  */
 public class Utility {
 	
+	private Utility() {
+		
+	}
+	
 	/**
 	 * 获取系统的classpath路径<br>
 	 * 

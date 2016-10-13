@@ -9,6 +9,10 @@ import java.util.Locale;
  */
 public class UpperStringFilter extends AbstractStringFilter {
 	
+	public UpperStringFilter() {
+		
+	}
+	
 	@Override
 	public String doFilter(String value) {
 		if (value == null) {

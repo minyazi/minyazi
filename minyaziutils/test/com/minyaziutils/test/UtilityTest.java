@@ -12,6 +12,10 @@ import com.minyaziutils.Utility;
  */
 public class UtilityTest {
 	
+	public UtilityTest() {
+		
+	}
+	
 	@Test
 	public void testGetClassPath() {
 		LogUtil.info(Utility.getClassPath());

@@ -12,6 +12,10 @@ import com.minyaziutils.LogUtil;
  */
 public class Base64UtilTest {
 	
+	public Base64UtilTest() {
+		
+	}
+	
 	@Test
 	public void test() {
 		LogUtil.info(Base64Util.encodeString("test"));

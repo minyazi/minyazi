@@ -15,6 +15,10 @@ import org.apache.commons.codec.binary.Base64;
  */
 public class Base64Util {
 	
+	private Base64Util() {
+		
+	}
+	
 	/**
 	 * 使用Base64加密字符串<br>
 	 * 

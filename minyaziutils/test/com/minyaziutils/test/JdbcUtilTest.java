@@ -12,6 +12,10 @@ import com.minyaziutils.LogUtil;
  */
 public class JdbcUtilTest {
 	
+	public JdbcUtilTest() {
+		
+	}
+	
 	@Test
 	public void testInit() {
 		JdbcUtil.init();

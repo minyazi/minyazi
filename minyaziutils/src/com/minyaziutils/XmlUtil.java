@@ -23,6 +23,10 @@ import org.xml.sax.SAXException;
  */
 public class XmlUtil {
 	
+	private XmlUtil() {
+		
+	}
+	
 	/**
 	 * 构造XML文件的Document对象<br>
 	 * 

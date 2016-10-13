@@ -18,6 +18,10 @@ import com.minyaziutils.filterutil.StringFilterFactory;
  */
 public class FileUtil {
 	
+	private FileUtil() {
+		
+	}
+	
 	/**
 	 * 保存文件<br>
 	 * 

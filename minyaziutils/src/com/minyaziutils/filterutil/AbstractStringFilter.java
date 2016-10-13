@@ -9,6 +9,10 @@ public abstract class AbstractStringFilter implements StringFilter {
 	
 	private StringFilter filter;
 	
+	public AbstractStringFilter() {
+		
+	}
+	
 	@Override
 	public void setNextStringFilter(StringFilter filter) {
 		this.filter = filter;

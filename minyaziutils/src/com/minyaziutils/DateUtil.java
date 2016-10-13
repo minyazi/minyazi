@@ -15,6 +15,10 @@ public class DateUtil {
 	
 	private static final String DEFAULT_PATTERN = "yyyy-MM-dd";
 	
+	private DateUtil() {
+		
+	}
+	
 	/**
 	 * 用给定的日期模式构造SimpleDateFormat对象<br>
 	 * 

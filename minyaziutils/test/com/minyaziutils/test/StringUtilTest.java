@@ -12,6 +12,10 @@ import com.minyaziutils.StringUtil;
  */
 public class StringUtilTest {
 	
+	public StringUtilTest() {
+		
+	}
+	
 	@Test
 	public void testGetUUID() {
 		LogUtil.info(StringUtil.getUUID());

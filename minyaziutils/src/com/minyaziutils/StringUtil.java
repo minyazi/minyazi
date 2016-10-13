@@ -10,6 +10,10 @@ import java.util.UUID;
  */
 public class StringUtil {
 	
+	private StringUtil() {
+		
+	}
+	
 	/**
 	 * 转换为小写字符串<br>
 	 * 

@@ -7,6 +7,10 @@ package com.minyaziutils.filterutil;
  */
 public class EmptyStringFilter extends AbstractStringFilter {
 	
+	public EmptyStringFilter() {
+		
+	}
+	
 	@Override
 	public String doFilter(String value) {
 		return value;

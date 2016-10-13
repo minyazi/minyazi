@@ -11,6 +11,10 @@ public class LogUtil {
 	
 	private static final Logger LOGGER = Logger.getLogger(LogUtil.class.getName());
 	
+	private LogUtil() {
+		
+	}
+	
 	/**
 	 * 用给定的名称构造日志记录器<br>
 	 * 

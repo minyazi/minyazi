@@ -13,6 +13,10 @@ import com.minyaziutils.Utility;
  */
 public class FileUtilTest {
 	
+	public FileUtilTest() {
+		
+	}
+	
 	@Test
 	public void testReadFile() {
 		LogUtil.info(FileUtil.readFile(Utility.getClassPath(), "code-config.xml", "UTF-8", false, true));
