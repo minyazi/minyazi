@@ -1,6 +1,10 @@
 # minyaziutils
 敏伢子的工具类库
 
+##V1.3版本变更说明（2016/10/14)
+* 增加MD5工具类（MD5Util），提供MD5加密的常用方法，需要依赖commons-codec-1.10类库。
+* 增加Base64工具类（Base64Util），提供Base64加密/解密的常用方法，需要依赖commons-codec-1.10类库。
+
 ##V1.2版本变更说明（2016/09/28)
 * 增加Excel工具类（ExcelUtil），提供针对Excel文件操作的常用方法，需要依赖apache-poi-3.10.1类库。
 * 增加JDBC工具类（JdbcUtil），提供针对JDBC操作的常用方法，需要依赖c3p0-0.9.5.1、apache-commons-dbutils-1.6和mysql-driver-5.1.39类库。

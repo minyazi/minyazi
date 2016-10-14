@@ -85,7 +85,6 @@ public class Base64Util {
 	 * @param base64String 要解密的Base64字符串
 	 * @param filePath 保存路径
 	 * @param filename 保存文件名
-	 * @return 返回解密后的结果。
 	 */
 	public static void decodeFile(String base64String, String filePath, String filename) {
 		try {
