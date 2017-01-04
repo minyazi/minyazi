@@ -1,12 +1,14 @@
 package com.minyaziutils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 
 import com.minyaziutils.filterutil.StringFilterFactory;
@@ -20,6 +22,37 @@ public class FileUtil {
 	
 	private FileUtil() {
 		
+	}
+	
+	/**
+	 * 保存文件<br>
+	 * 
+	 * @param fileText 要保存的文件文本
+	 * @param filePath 保存路径
+	 * @param filename 保存文件名
+	 * @param encoding 字符编码
+	 */
+	public static void saveFile(String fileText, String filePath, String filename, String encoding) {
+		try {
+			String path = filePath + "/" + filename;
+			BufferedWriter bw = null;
+			if (StringUtil.isEmptyString(encoding)) {
+				bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path)));
+			} else {
+				bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), encoding));
+			}
+			bw.write(fileText);
+			bw.flush();
+			bw.close();
+		} catch (FileNotFoundException e) {
+			PlatformException pe = new PlatformException("保存文件出错：" + e.getMessage(), e);
+			LogUtil.exception(pe);
+			throw pe;
+		} catch (IOException e) {
+			PlatformException pe = new PlatformException("保存文件出错：" + e.getMessage(), e);
+			LogUtil.exception(pe);
+			throw pe;
+		}
 	}
 	
 	/**
