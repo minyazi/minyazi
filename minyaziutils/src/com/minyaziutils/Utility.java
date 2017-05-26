@@ -103,25 +103,4 @@ public class Utility {
 		}
 	}
 	
-	/**
-	 * 验证数字是否是素数<br>
-	 * 
-	 * @param number 要验证的数字
-	 * @return 如果验证的数字是素数，则返回true，否则返回false。
-	 */
-	public static boolean isPrimeNumber(int number) {
-		if (number <= 1) {
-			return false;
-		}
-		if (number ==2) {
-			return true;
-		}
-		for (int i = 2; i < number; i++) {
-			if (number % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
-	
 }
